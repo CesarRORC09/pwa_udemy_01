@@ -1,10 +1,12 @@
 var url = window.location.href
-var serviceWorkerLocation = ''
+var serviceWorkerLocation = '/pwa_udemy_01/sw.js'
 
 
 if(navigator.serviceWorker){
 
-    serviceWorkerLocation = url.includes('localhost') || url.includes('127.0.0.1:8080') ?'/pwa_udemy_01/sw.js':'/sw.js'
+    if(url.includes('localhost') || url.includes('127.0.0.1:8080')){
+        serviceWorkerLocation ='/sw.js'
+    } 
     navigator.serviceWorker.register(serviceWorkerLocation)
 }
 // Referencias de jQuery
