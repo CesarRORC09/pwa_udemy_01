@@ -4,7 +4,7 @@ var serviceWorkerLocation = ''
 
 if(navigator.serviceWorker){
 
-    serviceWorkerLocation = url.includes('localhost') ?'/pwa_udemy_01/sw.js':'/sw.js'
+    serviceWorkerLocation = url.includes('localhost') || url.includes('127.0.0.1:8080') ?'/pwa_udemy_01/sw.js':'/sw.js'
     navigator.serviceWorker.register(serviceWorkerLocation)
 }
 // Referencias de jQuery
