@@ -1,7 +1,11 @@
+var url = window.location.href
+var serviceWorkerLocation = ''
 
 
 if(navigator.serviceWorker){
-    navigator.serviceWorker.register('/sw.js')
+
+    serviceWorkerLocation = url.includes(localhost) ?'/pwa_udemy_01/sw.js':'/sw.js'
+    navigator.serviceWorker.register(serviceWorkerLocation)
 }
 // Referencias de jQuery
 
